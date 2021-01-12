@@ -1,6 +1,6 @@
 package ehu.isad;
 
-import ehu.isad.controllers.ui.ProbaController;
+import ehu.isad.controllers.ui.PHPMyAdminController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,15 +24,15 @@ public class Main extends Application {
 
   private void loadUI(Stage primaryStage) throws IOException {
     stage = primaryStage;
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/proba.fxml"));
-    ProbaController mainController = ProbaController.getInstance();
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/phpmyadmin.fxml"));
+    PHPMyAdminController mainController = PHPMyAdminController.getInstance();
     loader.setController(mainController);
     root = loader.load();
   }
 
   private void stageSetup(){
     stage.setScene(new Scene(root));
-    stage.setTitle("Azterketa");
+    stage.setTitle("phpMyAdmin checksum & version checker");
     stage.getIcons().add(new Image(Main.class.getResourceAsStream("/icon.png")));
     stage.setResizable(false);
   }
